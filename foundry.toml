@@ -6,4 +6,7 @@ remappings = [
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"
 ]
 
+[rpc_endpoints]
+kaia_testnet = "https://public-en-kairos.node.kaia.io"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

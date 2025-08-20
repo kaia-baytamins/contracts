@@ -1,66 +1,89 @@
-## Foundry
+## 🚀 Deployed Contracts (KAIA Testnet)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+| Contract | Address | Description |
+|---------|---------|-------------|
+| **USDT Token** | `0x6283D8384d8F6eAF24eC44D355F31CEC0bDacE3D` | ERC20 token (1M initial supply) |
+| **USDT Staking** | `0x492b504EF0f81E52622087Eeb88124de8F2e4819` | 3% APY staking contract |
+| **SimpleAMM** | `0x5D2CAB3a1263a28764d001180F300eaEeCDfb344` | KAIA-USDT AMM (0.3% fee) |
+| **Lending Protocol** | `0xD24c75020E9FE0763473D4d313AA16955dA84468` | Supply 2%, Borrow 5% APY |
+| **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
 
-Foundry consists of:
+### Network Information
+- **Chain ID**: 1001 (KAIA Testnet)
+- **RPC URL**: https://public-en-kairos.node.kaia.io
+- **Explorer**: https://kairos.kaiascope.com/
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Staking System
+- Stake USDT to increase animal stats
+- 3% annual percentage yield
+- Real-time interest calculation
 
-## Documentation
+### AMM (Automated Market Maker)
+- KAIA ↔ USDT swaps
+- Liquidity provision for fee rewards
+- Constant product formula (x×y=k)
 
-https://book.getfoundry.sh/
+### Lending Protocol
+- Borrow USDT with ETH/KAIA collateral
+- 150% collateral ratio, 120% liquidation threshold
+- Suppliers earn 2% APY, borrowers pay 5% APY
 
-## Usage
+### Faucet
+- Free 1000 USDT every 10 minutes
+- Test token distribution
+
+## 🛠 Development
 
 ### Build
-
-```shell
-$ forge build
+```bash
+forge build
 ```
 
 ### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
+```bash
+forge test
 ```
 
 ### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+forge script script/Deploy.s.sol --rpc-url kaia_testnet --broadcast
 ```
 
-### Cast
+## 📊 Contract Functions
 
-```shell
-$ cast <subcommand>
-```
+### USDT Token
+- Standard ERC20 with minting capabilities
+- Role-based access control
+- Pausable for emergencies
 
-### Help
+### USDTStaking
+- `stake(amount)`: Stake USDT tokens
+- `unstake(amount)`: Unstake tokens
+- `claimRewards()`: Claim accumulated rewards
+- `calculateReward(user)`: View pending rewards
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### SimpleAMM
+- `addLiquidity(amountA, amountB)`: Add liquidity
+- `removeLiquidity(liquidity)`: Remove liquidity
+- `swapAForB(amountIn)`: KAIA → USDT
+- `swapBForA(amountIn)`: USDT → KAIA
+
+### LendingProtocol
+- `supply(amount)`: Deposit USDT
+- `withdraw(amount)`: Withdraw deposits
+- `depositCollateral()`: Deposit ETH collateral
+- `borrow(amount)`: Borrow USDT
+- `repay(amount)`: Repay loans
+
+### USDTFaucet
+- `claimTokens()`: Get 1000 USDT (10min cooldown)
+- `canClaim(user)`: Check if user can claim
+
+## 🔒 Security Features
+
+- **ReentrancyGuard**: Protection against reentrancy attacks
+- **AccessControl**: Role-based permission system
+- **Pausable**: Emergency stop functionality
+- **SafeERC20**: Safe token transfers
+
+Built with OpenZeppelin contracts for maximum security and reliability.

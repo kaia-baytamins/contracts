@@ -7,6 +7,7 @@
 | **SimpleAMM** | `0x5D2CAB3a1263a28764d001180F300eaEeCDfb344` | KAIA-USDT AMM (0.3% fee) |
 | **Lending Protocol** | `0xD24c75020E9FE0763473D4d313AA16955dA84468` | Supply 2%, Borrow 5% APY |
 | **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
+| **Inventory** | `0xA5A26A9B9E7e1D9eC4304Ba0D1c2E6c9f9Cd9104` | item inventory contract(ERC-1155) |
 
 ### Network Information
 - **Chain ID**: 1001 (KAIA Testnet)
@@ -31,6 +32,17 @@
 ### Faucet
 - Free 1000 USDT every 10 minutes
 - Test token distribution
+
+### Inventory 
+- **item Categories**: Items are divided into four categories based on their ID range:
+    - **0–15**: Engine – Components for spaceship propulsion.
+    - **16–31**: Spaceship Materials – Construction and upgrade supplies.
+    - **32–47**: Special Equipment – Advanced tools and devices.
+    - **48–63**: Fuel – Energy sources for spaceship operation.
+- **Rarity Levels**: Each category contains items with different rarity:
+    - **8 Common items**
+    - **5 Rare items**
+    - **3 Legendary items**
 
 ## 🛠 Development
 
@@ -78,6 +90,13 @@ forge script script/Deploy.s.sol --rpc-url kaia_testnet --broadcast
 ### USDTFaucet
 - `claimTokens()`: Get 1000 USDT (10min cooldown)
 - `canClaim(user)`: Check if user can claim
+
+### Inventory
+- `mintItems(to, itemIds[], amount[])`: **batch** mint (Admin only).
+- `mintItem(to, itemId, amount)`: single mint (Admin only).
+- `useItems(user, itemIds[], amounts[])`: **batch** burn (Admin only).
+- `useItem(user, itemId, amount)`: single burn (Admin only).
+- `getUserItems(user, itemIds[])`: Get item balances for a user based on item IDs. 
 
 ## 🔒 Security Features
 

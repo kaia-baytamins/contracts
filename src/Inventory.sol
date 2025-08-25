@@ -68,26 +68,27 @@ contract Inventory is ERC1155, Ownable {
     // ===================
     // 아이템 사용/소각
     // ===================
-    function useItems(address user, uint256[] memory itemIds, uint256[] memory amounts) 
+    function useItems(uint256[] memory itemIds, uint256[] memory amounts) 
         external onlyAdmin {
-        for (uint256 i = 0; i < itemIds.length; i++) {
-            require(balanceOf(user, itemIds[i]) >= amounts[i], "Insufficient balance");
+            for (uint256 i = 0; i < itemIds.length; i++) {
+                require(balanceOf(msg.sender, itemIds[i]) >= amounts[i], "Insufficient balance");
+            }
+            
+            _burnBatch(msg.sender, itemIds, amounts);
+            
+            for (uint256 i = 0; i < itemIds.length; i++) {
+                emit ItemUsed(msg.sender, itemIds[i], amounts[i]);
+            }
         }
-        
-        _burnBatch(user, itemIds, amounts);
-        
-        for (uint256 i = 0; i < itemIds.length; i++) {
-            emit ItemUsed(user, itemIds[i], amounts[i]);
-        }
-    }
 
-    function useItem(address user, uint256 itemId, uint256 amount) 
-        external onlyAdmin {
-        require(balanceOf(user, itemId) >= amount, "Insufficient balance");
-        
-        _burn(user, itemId, amount);
-        emit ItemUsed(user, itemId, amount);
-    }
+    function useItem(uint256 itemId, uint256 amount) 
+            external onlyAdmin {
+            require(balanceOf(msg.sender, itemId) >= amount, "Insufficient balance");
+            
+            _burn(msg.sender, itemId, amount);
+            emit ItemUsed(msg.sender, itemId, amount);
+        }
+
 
     
     // ===================

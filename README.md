@@ -7,7 +7,8 @@
 | **SimpleAMM** | `0x5D2CAB3a1263a28764d001180F300eaEeCDfb344` | KAIA-USDT AMM (0.3% fee) |
 | **Lending Protocol** | `0xD24c75020E9FE0763473D4d313AA16955dA84468` | Supply 2%, Borrow 5% APY |
 | **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
-| **Inventory** | `0xA5A26A9B9E7e1D9eC4304Ba0D1c2E6c9f9Cd9104` | item inventory contract(ERC-1155) |
+| **Inventory** | `0x58862B9b9b377C092361E0a4742D042b5E3F9f72` | item inventory contract(ERC-1155) |
+| **NFT Market** | `0x9f191C5E45731e1932EF5133C1300b13956E6ac1` | item trading contract (ERC-1155) |
 
 ### Network Information
 - **Chain ID**: 1001 (KAIA Testnet)
@@ -43,6 +44,11 @@
     - **8 Common items**
     - **5 Rare items**
     - **3 Legendary items**
+
+### NFTMarket
+- Listing ERC1155 tokens for sale
+- Purchasing listed items by paying the sepcified price in USDT
+- Canceling their listed items
 
 ## 🛠 Development
 
@@ -94,9 +100,14 @@ forge script script/Deploy.s.sol --rpc-url kaia_testnet --broadcast
 ### Inventory
 - `mintItems(to, itemIds[], amount[])`: **batch** mint (Admin only).
 - `mintItem(to, itemId, amount)`: single mint (Admin only).
-- `useItems(user, itemIds[], amounts[])`: **batch** burn (Admin only).
-- `useItem(user, itemId, amount)`: single burn (Admin only).
+- `useItems(itemIds[], amounts[])`: **batch** burn (Admin only).
+- `useItem(itemId, amount)`: single burn (Admin only).
 - `getUserItems(user, itemIds[])`: Get item balances for a user based on item IDs. 
+
+### NFTMarket
+- `listItem(itemId, amount, price)`: Allows a user to list their ERC1155 tokens for sale.
+- `purchaseItem(listingId)`: Allows a buyer to purchase an item from a listing.
+- `cancelListing(listingId)`: Allows the seller to cancel their active listing.
 
 ## 🔒 Security Features
 

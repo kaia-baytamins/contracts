@@ -9,6 +9,13 @@
 | **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
 | **Inventory** | `0x58862B9b9b377C092361E0a4742D042b5E3F9f72` | item inventory contract(ERC-1155) |
 | **NFT Market** | `0x9f191C5E45731e1932EF5133C1300b13956E6ac1` | item trading contract (ERC-1155) |
+| **Moon NFT** | `0x0Fd693Fa212F7B42705EcFEC577c8236d45bf1A7` | Moon Exploration Success NFT (ERC-721) |
+| **Mars NFT** | `0xB399AD2828D4535c0B30F73afbc50Ac96Efe4977` | Mars Exploration Success NFT (ERC-721) |
+| **Titan NFT** | `0xb228cfCe3DCC0AF6b1B4b70790aD916301E6Bd1F` | Titan Exploration Success NFT (ERC-721) |
+| **Europa NFT** | `0x674ca2Ca5Cc7481ceaaead587E499398b5eDC8E1` | Europa Exploration Success NFT (ERC-721) |
+| **Saturn NFT** | `0x6C0D8F6B87dCFD9e1593a0307Bd22464c58f95F3` | Saturn Exploration Success NFT (ERC-721) |
+
+
 
 ### Network Information
 - **Chain ID**: 1001 (KAIA Testnet)
@@ -50,6 +57,11 @@
 - Listing ERC1155 tokens for sale
 - Purchasing listed items by paying the sepcified price in USDT
 - Canceling their listed items
+
+### Planet NFT (ERC721) 
+- Mint NFTs for successful planetary explorations.
+- Supports multiple planets (e.g., Moon, Titan, Europa, Saturn).
+- Complies with the ERC721 standard for non-fungible tokens.
 
 ## 🛠 Development
 

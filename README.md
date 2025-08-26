@@ -9,6 +9,7 @@
 | **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
 | **Inventory** | `0x58862B9b9b377C092361E0a4742D042b5E3F9f72` | item inventory contract(ERC-1155) |
 | **NFT Market** | `0x9f191C5E45731e1932EF5133C1300b13956E6ac1` | item trading contract (ERC-1155) |
+| **Multicall3** | `0x6C75785a346d18b2edB309a4205d6125c63FE551` | Aggregates multiple function calls into one |
 
 ### Network Information
 - **Chain ID**: 1001 (KAIA Testnet)

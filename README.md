@@ -4,7 +4,7 @@
 |---------|---------|-------------|
 | **USDT Token** | `0x6283D8384d8F6eAF24eC44D355F31CEC0bDacE3D` | ERC20 token (1M initial supply) |
 | **USDT Staking** | `0x492b504EF0f81E52622087Eeb88124de8F2e4819` | 3% APY staking contract |
-| **SimpleAMM** | `0x5D2CAB3a1263a28764d001180F300eaEeCDfb344` | KAIA-USDT AMM (0.3% fee) |
+| **SimpleAMM** | `0x8cc13474301FE5AA08c920dB228A3BB1E68F5b13` | WKAIA-USDT AMM (0.3% fee) |
 | **Lending Protocol** | `0xD24c75020E9FE0763473D4d313AA16955dA84468` | Supply 2%, Borrow 5% APY |
 | **USDT Faucet** | `0x4E2eBac253D77900CC50DD093f17150Ba4437FaE` | 1000 USDT every 10 minutes |
 | **Inventory** | `0x58862B9b9b377C092361E0a4742D042b5E3F9f72` | item inventory contract(ERC-1155) |

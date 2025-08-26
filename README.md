@@ -41,8 +41,9 @@
     - **32–47**: Special Equipment – Advanced tools and devices.
     - **48–63**: Fuel – Energy sources for spaceship operation.
 - **Rarity Levels**: Each category contains items with different rarity:
-    - **8 Common items**
-    - **5 Rare items**
+    - **6 Common items**
+    - **4 Rare items**
+    - **3 Epic items**
     - **3 Legendary items**
 
 ### NFTMarket

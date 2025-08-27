@@ -5,7 +5,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract PlanetNFT is ERC721, Ownable {
-    address public allowedContract; // 특정 컨트랙트 주소
+    address public allowedContract; // 허용된 ERC1155 컨트랙트 주소
+    mapping(address => bool) public authorizedAddresses; // 추가 권한 주소들 (최초 배포자 등)
 
     uint256 private _tokenIdCounter;
 
